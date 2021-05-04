@@ -15,7 +15,8 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": "^7.0 || ^8.0"
+    "php": "^7.0 || ^8.0",
+    "ext-phalcon": "^3.0"
   },
   "autoload": {
     "classmap": [
