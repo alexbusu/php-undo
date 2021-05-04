@@ -20,7 +20,7 @@ jobs:
 #          - "7.4"
 #          - "8.0"
         operating-system:
-          - "ubuntu-latest"
+          - "ubuntu-18.04"
 
     steps:
       - name: "Checkout"
