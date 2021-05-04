@@ -33,7 +33,7 @@ jobs:
           php-version: "${{ matrix.php-version }}"
           ini-values: memory_limit=-1
           tools: composer:v2, cs2pr
-          extensions: mbstring, dom, zip, pahlcon3
+          extensions: mbstring, dom, zip, phalcon3
 
       - name: "Cache dependencies"
         uses: "actions/cache@v2"
