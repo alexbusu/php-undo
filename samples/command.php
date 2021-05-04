@@ -10,17 +10,18 @@ use command\AbstractDbAdapter;
  */
 class command extends AbstractDbAdapter
 {
+    /** @var \command\commandInterface $command */
+    private $command;
 
-	/** @var \command\commandInterface $command */
-	private $command;
+    function __construct($commandId = 0)
+    {
+        if (is_numeric($commandId) && $commandId) {
+            $this->command = $this->getById($commandId);
+        }
+    }
 
-	function __construct( $commandId = 0 ){
-		if( is_numeric( $commandId ) && $commandId ){
-			$this->command = $this->getById( $commandId );
-		}
-	}
-
-	public function getCommand(){
-		return $this->command;
-	}
+    public function getCommand()
+    {
+        return $this->command;
+    }
 }
