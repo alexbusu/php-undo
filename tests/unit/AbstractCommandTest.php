@@ -3,6 +3,7 @@
 namespace command;
 
 use PHPUnit\Framework\TestCase;
+use samples\command;
 
 class AbstractCommandTest extends TestCase
 {
@@ -54,5 +55,19 @@ class AbstractCommandTest extends TestCase
         self::assertTrue($this->command->serializeWakeupWasCalled, '::__wakeup() was not called');
         self::assertTrue($this->command->wakeupWasCalled, '::wakeup() was not called');
         self::assertSame($this->parameters, $this->command->getInputParameters());
+    }
+
+    public function testCommandExecute()
+    {
+        self::assertFalse($this->command->executeWasCalled, 'execute should not be called yet');
+        $this->command->execute();
+        self::assertTrue($this->command->executeWasCalled, 'execute should be called');
+    }
+
+    public function testCommandUndo()
+    {
+        self::assertFalse($this->command->undoWasCalled, 'undo should not be called yet');
+        $this->command->undo();
+        self::assertTrue($this->command->undoWasCalled, 'undo should be called');
     }
 }
