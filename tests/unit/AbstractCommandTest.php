@@ -10,7 +10,7 @@ class AbstractCommandTest extends TestCase
     private $parameters;
     private $command;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->parameters = [
             'old' => 'state',
